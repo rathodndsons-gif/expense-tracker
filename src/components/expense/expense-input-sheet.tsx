@@ -220,7 +220,7 @@ export function ExpenseInputSheet({
           </DrawerDescription>
         </DrawerHeader>
 
-        <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto overscroll-contain px-4 pb-6">
+        <div className="flex min-h-0 max-h-[calc(85dvh-6.5rem)] flex-1 flex-col gap-4 overflow-y-auto overscroll-contain px-4 pb-6">
           {/* NLP input */}
           <div className="flex items-end gap-2">
             <textarea
