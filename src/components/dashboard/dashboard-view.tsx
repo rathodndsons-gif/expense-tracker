@@ -253,7 +253,7 @@ function EmptyState() {
   return (
     <div className="rounded-2xl border border-dashed bg-card/50 py-10 text-center text-sm text-muted-foreground">
       No entries yet. Tap <span className="font-medium">Add expense</span> and try
-      “coffee for 5 dollars yesterday”.
+      “coffee for 30 rupees”.
     </div>
   );
 }

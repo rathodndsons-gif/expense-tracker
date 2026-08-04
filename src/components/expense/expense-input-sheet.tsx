@@ -26,7 +26,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CATEGORIES, CURRENCIES, CURRENCY_SYMBOLS } from "@/lib/constants";
+import {
+  BASE_CURRENCY,
+  CATEGORIES,
+  CURRENCIES,
+  CURRENCY_SYMBOLS,
+} from "@/lib/constants";
 import { parseExpense } from "@/lib/nlp";
 import { draftAmountBase } from "@/lib/nlp";
 import { downscaleImage, extractReceiptText } from "@/lib/ocr";
@@ -75,7 +80,7 @@ function emptyDraft(): Draft {
     amount: 0,
     merchant: "",
     note: "",
-    currency: "USD",
+    currency: BASE_CURRENCY,
     category: "other",
     type: "expense",
     date: todayISO(),
@@ -207,7 +212,7 @@ export function ExpenseInputSheet({
 
   return (
     <Drawer open={open} onOpenChange={onOpenChange}>
-      <DrawerContent className="pb-safe">
+      <DrawerContent className="max-h-[85dvh] pb-safe">
         <DrawerHeader>
           <DrawerTitle>Add expense</DrawerTitle>
           <DrawerDescription>
@@ -215,13 +220,13 @@ export function ExpenseInputSheet({
           </DrawerDescription>
         </DrawerHeader>
 
-        <div className="flex flex-col gap-4 px-4 pb-6">
+        <div className="flex min-h-0 flex-1 flex-col gap-4 overflow-y-auto overscroll-contain px-4 pb-6">
           {/* NLP input */}
           <div className="flex items-end gap-2">
             <textarea
               value={nlpText}
               onChange={(e) => setNlpText(e.target.value)}
-              placeholder="e.g. “Uber to airport for 25 dollars yesterday”"
+              placeholder="e.g. “Uber to airport for 250 rupees yesterday”"
               rows={2}
               className="min-h-0 w-full flex-1 resize-none rounded-xl border bg-muted/40 px-3 py-2.5 text-sm outline-none focus:ring-2 focus:ring-primary/30"
             />
@@ -472,7 +477,7 @@ function SplitEditor({
                 className="flex-1 rounded-lg border bg-card px-2.5 py-1.5 text-sm outline-none"
               />
               <span className="w-14 text-right text-sm text-muted-foreground">
-                {CURRENCY_SYMBOLS.USD}
+                {CURRENCY_SYMBOLS[BASE_CURRENCY]}
                 {p.share.toFixed(2)}
               </span>
               <Button

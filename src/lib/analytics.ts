@@ -1,5 +1,5 @@
 import { format, subDays } from "date-fns";
-import { CATEGORY_MAP, DEFAULT_BUDGETS } from "./constants";
+import { BASE_CURRENCY, CATEGORY_MAP, DEFAULT_BUDGETS } from "./constants";
 import type {
   CoachInsight,
   Expense,
@@ -331,13 +331,13 @@ export function buildCoachReply(
   if (insights.length > 0) {
     return `${insights[0].title}. ${insights[0].body}`;
   }
-  return "You're in good shape. Add more expenses (try natural language like “coffee 5 dollars yesterday”) and I'll analyze your habits.";
+  return "You're in good shape. Add more expenses (try natural language like “coffee 30 rupees yesterday”) and I'll analyze your habits.";
 }
 
 function fmt(n: number): string {
-  return n.toLocaleString("en-US", {
+  return n.toLocaleString("en-IN", {
     style: "currency",
-    currency: "USD",
+    currency: BASE_CURRENCY,
     maximumFractionDigits: 0,
   });
 }

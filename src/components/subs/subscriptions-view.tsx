@@ -19,7 +19,12 @@ import {
   SelectTrigger,
   SelectValue,
 } from "@/components/ui/select";
-import { CATEGORIES, CURRENCIES, CURRENCY_SYMBOLS } from "@/lib/constants";
+import {
+  BASE_CURRENCY,
+  CATEGORIES,
+  CURRENCIES,
+  CURRENCY_SYMBOLS,
+} from "@/lib/constants";
 import { formatMoney } from "@/lib/currency";
 import { useExpenseStore } from "@/store/expense-store";
 import { useHaptic } from "@/hooks/use-haptic";
@@ -55,7 +60,7 @@ export function SubscriptionsView() {
   const [open, setOpen] = useState(false);
   const [name, setName] = useState("");
   const [amount, setAmount] = useState("");
-  const [currency, setCurrency] = useState<CurrencyCode>("USD");
+  const [currency, setCurrency] = useState<CurrencyCode>(BASE_CURRENCY);
   const [cadence, setCadence] = useState<SubscriptionCadence>("monthly");
   const [category, setCategory] = useState<ExpenseCategory>("subscriptions");
   const [nextBilling, setNextBilling] = useState(() =>
