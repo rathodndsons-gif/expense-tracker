@@ -14,7 +14,7 @@ export function AppProviders({ children }: { children: React.ReactNode }) {
     if ("serviceWorker" in navigator) {
       // Wait for load so first render isn't delayed by SW registration.
       window.addEventListener("load", () => {
-        navigator.serviceWorker.register("/sw.js").catch(() => {
+        navigator.serviceWorker.register("/expense-tracker/sw.js").catch(() => {
           // SW unavailable (e.g. insecure context) — app still works online.
         });
       });

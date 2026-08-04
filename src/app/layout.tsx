@@ -32,7 +32,7 @@ export const metadata: Metadata = {
   description:
     "Ultimate offline-first expense tracker: natural-language entry, multi-currency, split expenses, subscriptions and an AI coach.",
   applicationName: APP_NAME,
-  manifest: "/manifest.json",
+  manifest: "/expense-tracker/manifest.json",
   appleWebApp: {
     capable: true,
     statusBarStyle: "black-translucent",
@@ -45,11 +45,23 @@ export const metadata: Metadata = {
   },
   icons: {
     icon: [
-      { url: "/icons/icon-192.png", sizes: "192x192", type: "image/png" },
-      { url: "/icons/icon-512.png", sizes: "512x512", type: "image/png" },
+      {
+        url: "/expense-tracker/icons/icon-192.png",
+        sizes: "192x192",
+        type: "image/png",
+      },
+      {
+        url: "/expense-tracker/icons/icon-512.png",
+        sizes: "512x512",
+        type: "image/png",
+      },
     ],
     apple: [
-      { url: "/apple-touch-icon.png", sizes: "180x180", type: "image/png" },
+      {
+        url: "/expense-tracker/apple-touch-icon.png",
+        sizes: "180x180",
+        type: "image/png",
+      },
     ],
   },
 };

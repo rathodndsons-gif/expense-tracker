@@ -13,13 +13,14 @@
  */
 
 const VERSION = "expense-tracker-v1";
+const BASE = "/expense-tracker";
 const APP_SHELL = [
-  "/",
-  "/manifest.json",
-  "/icons/icon-192.png",
-  "/icons/icon-512.png",
-  "/icons/icon-maskable-512.png",
-  "/apple-touch-icon.png",
+  BASE + "/",
+  BASE + "/manifest.json",
+  BASE + "/icons/icon-192.png",
+  BASE + "/icons/icon-512.png",
+  BASE + "/icons/icon-maskable-512.png",
+  BASE + "/apple-touch-icon.png",
 ];
 
 self.addEventListener("install", (event) => {
@@ -55,11 +56,11 @@ self.addEventListener("fetch", (event) => {
       fetch(request)
         .then((response) => {
           const copy = response.clone();
-          caches.open(VERSION).then((cache) => cache.put("/", copy));
+          caches.open(VERSION).then((cache) => cache.put(BASE + "/", copy));
           return response;
         })
         .catch(() =>
-          caches.match("/").then((cached) => cached ?? Response.error()),
+          caches.match(BASE + "/").then((cached) => cached ?? Response.error()),
         ),
     );
     return;
@@ -67,9 +68,9 @@ self.addEventListener("fetch", (event) => {
 
   // Static assets: cache-first.
   if (
-    url.pathname.startsWith("/_next/static/") ||
-    url.pathname.startsWith("/icons/") ||
-    url.pathname.startsWith("/fonts/")
+    url.pathname.startsWith(BASE + "/_next/static/") ||
+    url.pathname.startsWith(BASE + "/icons/") ||
+    url.pathname.startsWith(BASE + "/fonts/")
   ) {
     event.respondWith(
       caches.match(request).then(
@@ -88,7 +89,7 @@ self.addEventListener("fetch", (event) => {
   }
 
   // Images and the manifest: stale-while-revalidate.
-  if (request.destination === "image" || url.pathname === "/manifest.json") {
+  if (request.destination === "image" || url.pathname === BASE + "/manifest.json") {
     event.respondWith(
       caches.match(request).then((cached) => {
         const network = fetch(request)
