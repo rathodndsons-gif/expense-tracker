@@ -1,7 +1,7 @@
 import type { CurrencyCode, ExpenseCategory } from "./types";
 
 /** The user's single base currency used for analytics + conversions. */
-export const BASE_CURRENCY: CurrencyCode = "USD";
+export const BASE_CURRENCY: CurrencyCode = "INR";
 
 export const APP_NAME = "Expense Tracker";
 
@@ -48,19 +48,19 @@ export interface CategoryMeta {
 }
 
 export const CATEGORIES: CategoryMeta[] = [
-  { id: "transport", label: "Transport", emoji: "🚗", defaultBudget: 300 },
-  { id: "food", label: "Food & Drink", emoji: "🍔", defaultBudget: 400 },
-  { id: "groceries", label: "Groceries", emoji: "🛒", defaultBudget: 350 },
-  { id: "housing", label: "Housing", emoji: "🏠", defaultBudget: 1400 },
-  { id: "utilities", label: "Utilities", emoji: "💡", defaultBudget: 200 },
-  { id: "entertainment", label: "Fun", emoji: "🎬", defaultBudget: 150 },
-  { id: "shopping", label: "Shopping", emoji: "🛍️", defaultBudget: 250 },
-  { id: "health", label: "Health", emoji: "💊", defaultBudget: 120 },
-  { id: "travel", label: "Travel", emoji: "✈️", defaultBudget: 300 },
-  { id: "education", label: "Education", emoji: "📚", defaultBudget: 100 },
-  { id: "subscriptions", label: "Subscriptions", emoji: "🔁", defaultBudget: 80 },
+  { id: "transport", label: "Transport", emoji: "🚗", defaultBudget: 3000 },
+  { id: "food", label: "Food & Drink", emoji: "🍔", defaultBudget: 6000 },
+  { id: "groceries", label: "Groceries", emoji: "🛒", defaultBudget: 5000 },
+  { id: "housing", label: "Housing", emoji: "🏠", defaultBudget: 15000 },
+  { id: "utilities", label: "Utilities", emoji: "💡", defaultBudget: 2000 },
+  { id: "entertainment", label: "Fun", emoji: "🎬", defaultBudget: 1500 },
+  { id: "shopping", label: "Shopping", emoji: "🛍️", defaultBudget: 2500 },
+  { id: "health", label: "Health", emoji: "💊", defaultBudget: 1500 },
+  { id: "travel", label: "Travel", emoji: "✈️", defaultBudget: 4000 },
+  { id: "education", label: "Education", emoji: "📚", defaultBudget: 2000 },
+  { id: "subscriptions", label: "Subscriptions", emoji: "🔁", defaultBudget: 800 },
   { id: "income", label: "Income", emoji: "💵", defaultBudget: 0 },
-  { id: "other", label: "Other", emoji: "📦", defaultBudget: 100 },
+  { id: "other", label: "Other", emoji: "📦", defaultBudget: 1000 },
 ];
 
 export const CATEGORY_MAP: Record<ExpenseCategory, CategoryMeta> =
