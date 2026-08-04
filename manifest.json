@@ -1,0 +1,36 @@
+{
+  "name": "Expense Tracker",
+  "short_name": "Expenses",
+  "description": "Ultimate offline-first expense tracker with NLP entry, multi-currency, split expenses and an AI financial coach.",
+  "id": "/expense-tracker/",
+  "start_url": "/expense-tracker/",
+  "scope": "/expense-tracker/",
+  "display": "standalone",
+  "orientation": "portrait",
+  "background_color": "#000000",
+  "theme_color": "#000000",
+  "lang": "en",
+  "categories": ["finance", "productivity"],
+  "icons": [
+    { "src": "/expense-tracker/icons/icon-192.png", "sizes": "192x192", "type": "image/png" },
+    { "src": "/expense-tracker/icons/icon-512.png", "sizes": "512x512", "type": "image/png" },
+    {
+      "src": "/expense-tracker/icons/icon-maskable-512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    }
+  ],
+  "shortcuts": [
+    {
+      "name": "Add expense",
+      "short_name": "Add",
+      "url": "/expense-tracker/?action=add"
+    },
+    {
+      "name": "Subscriptions",
+      "short_name": "Subs",
+      "url": "/expense-tracker/?tab=subs"
+    }
+  ]
+}
