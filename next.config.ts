@@ -4,7 +4,7 @@ import type { NextConfig } from "next";
 const loaderPath = require.resolve('@ideavo/webpack-tagger');
 
 const nextConfig: NextConfig = {
-  output: "export",
+  ...(process.env.GH_PAGES === "1" ? { output: "export" as const } : {}),
   basePath: "/expense-tracker",
   trailingSlash: true,
   images: {
