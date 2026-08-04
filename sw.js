@@ -12,7 +12,7 @@
  * offline. Bump VERSION to invalidate the cache on deploy.
  */
 
-const VERSION = "expense-tracker-v1";
+const VERSION = "expense-tracker-v2";
 const BASE = "/expense-tracker";
 const APP_SHELL = [
   BASE + "/",
